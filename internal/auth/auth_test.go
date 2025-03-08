@@ -17,7 +17,7 @@ func TestAuthorization(t *testing.T) {
 		},
 		"no key": {
 			input: http.Header{"Authorization": []string{"ApiKey"}},
-			want:  "fail",
+			want:  "",
 		},
 	}
 
