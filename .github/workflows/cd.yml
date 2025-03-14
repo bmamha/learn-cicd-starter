@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DATABASE_URL: ${{ secrets.DATABASE.URL }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
       - name: Check out code
@@ -31,7 +31,7 @@ jobs:
         run: ./scripts/migrateup.sh
 
       - name: Check for sensitive credentials
-        run: git diff
+        run: git diff HEAD
 
       - id: auth
         uses: google-github-actions/auth@v2
